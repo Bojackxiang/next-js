@@ -15,6 +15,13 @@ const Home = () => {
         {
           links.map((link, index) => <li key={index}><Link href={link.path}>{link.name}</Link></li>)
         }
+        <li>
+          <Link href={{
+            pathname: '/clients/[id]',
+            query: { id: 1 }
+          }}>client</Link>
+        </li>
+
       </ul>
     </div>
   )
