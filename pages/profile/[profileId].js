@@ -7,7 +7,7 @@ import { useRouter } from 'next/router' // 获取用户输入的参数
 
 const SingleProfilePage = () => {
   const route = useRouter()
-  const { query } = router
+  const { query } = route
 
   return (
     <div>
