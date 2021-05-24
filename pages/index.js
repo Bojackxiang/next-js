@@ -3,12 +3,22 @@
  */
 import React from 'react'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 const Home = () => {
+  const router = useRouter();
   const links = [
     { name: 'about', path: '/about' },
     { name: 'client', path: '/clients/12' },
     { name: 'dynamic client', path: '/clients/12/projects/13' },
   ]
+
+  const redirectToClient = () => {
+    // router.push('/clients/12')
+    router.push({
+      pathname: '/clients/[id]',
+      query: {id: 1}
+    })
+  }
   return (
     <div>
       <ul>
@@ -23,6 +33,7 @@ const Home = () => {
         </li>
 
       </ul>
+      <button onClick={redirectToClient}>link to client</button>
     </div>
   )
 }
